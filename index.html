@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tamil Beats – Your Tamil Music World</title>
+<meta name="description" content="Discover Tamil songs in one click. Search by song, movie or artist, play, favourite and download authorized tracks.">
+<meta name="theme-color" content="#0b0b12">
+<meta property="og:title" content="Tamil Beats 🎵"><meta property="og:description" content="Discover your favourite Tamil songs in one click.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2290%22 font-size=%2290%22>🎵</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#home" aria-label="Tamil Beats home"><span>Tamil Beats</span> 🎵</a>
+<nav aria-label="Main"><a href="#home" data-nav="home">Home</a><a href="#search" data-nav="search">Search</a><a href="#categories" data-nav="categories">Categories</a><a href="#about" data-nav="about">About</a></nav>
+</div></header>
+
+<main class="wrap">
+<div data-view="home">
+<div class="hero">
+<div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<h1>Your Tamil Music World</h1>
+<p>Discover your favourite Tamil songs in one click.</p>
+<form class="search" role="search" id="heroForm"><span aria-hidden="true">🔍</span>
+<input id="heroQ" type="search" placeholder="Search songs, movies, or artists…" aria-label="Search songs, movies, or artists" autocomplete="off">
+<button class="btn" type="submit">Search</button></form>
+</div>
+<div id="sections"></div>
+</div>
+
+<div data-view="search" hidden>
+<div style="padding-top:36px"><form class="search" role="search" onsubmit="return false"><span aria-hidden="true">🔍</span>
+<input id="q" type="search" placeholder="Search songs, movies, or artists…" aria-label="Search" autocomplete="off" enterkeyhint="search"></form></div>
+<div class="filters" id="chips" role="group" aria-label="Category filters"></div>
+<div class="filters" style="margin-top:0"><span id="count" style="color:var(--mute);font-size:.85rem"></span>
+<select id="sort" aria-label="Sort songs"><option value="rel">Sort: Best match</option><option value="new">Newest first</option><option value="pop">Most played</option><option value="az">Title A–Z</option></select></div>
+<div id="results" class="grid" style="margin-top:14px"></div>
+</div>
+
+<div data-view="categories" hidden><section class="blk" style="padding-top:30px"><h2>Categories</h2><div class="cats" id="catGrid"></div></section></div>
+
+<div data-view="about" hidden><section class="blk about" style="padding-top:30px">
+<h2>About Tamil Beats</h2>
+<p>Tamil Beats helps you find and enjoy Tamil music. Every download button works only for tracks that are original, royalty-free or cleared for distribution. For commercial film songs, the card links to the official streaming or store page instead.</p>
+<h3>Replace the demo music with licensed tracks</h3>
+<p>Open <code>index.html</code> and edit the <code>SONGS</code> array. Put your audio in an <code>audio/</code> folder, then set <code>src: "audio/my-song.mp3"</code> and <code>dl: true</code> only if you own or license the right to distribute it. For songs you cannot host, set <code>dl: false</code> and add <code>store: "https://…official link…"</code>.</p>
+</section></div>
+</main>
+
+<footer><div class="wrap">
+<div>© 2026 Tamil Beats. Demo audio courtesy of SoundHelix (royalty-free). All other rights belong to their owners.</div>
+<nav aria-label="Footer"><a href="mailto:hello@tamilbeats.example">Contact</a><a href="#about">Privacy Policy</a><a href="#about">Terms</a><a href="#about">Copyright</a></nav>
+</div></footer>
+
+<div id="player" aria-label="Music player"><div class="pin">
+<div class="meta"><div class="cv" id="pcv" style="background:var(--panel2)">🎵</div><div><strong id="pt">Pick a song</strong><span id="pa">Tamil Beats</span></div></div>
+<div class="ctl"><div class="b"><button id="prev" aria-label="Previous">⏮</button><button id="pp" aria-label="Play">▶</button><button id="next" aria-label="Next">⏭</button></div>
+<div class="prog"><span id="cur">0:00</span><input type="range" id="seek" min="0" max="100" value="0" step="0.1" aria-label="Progress"><span id="dur">0:00</span></div></div>
+<div class="vol"><span aria-hidden="true">🔊</span><input type="range" id="vol" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" style="max-width:110px"></div>
+</div></div>
+<div id="toast" hidden role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
