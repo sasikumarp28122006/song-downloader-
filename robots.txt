@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sasikumarp28122006.github.io/song-downloader-/sitemap.xml
